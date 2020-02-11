@@ -17,7 +17,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="dashboard.jsp">
+        <a class="nav-link" href="${contextPath}/dash-home">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -54,7 +54,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Login Screens:</h6>
                 <a class="collapse-item" href="${contextPath}/login">Login</a>
-                <a class="collapse-item" href="register.jsp">Register</a>
+                <a class="collapse-item" href="${contextPath}/register">Register</a>
                 <a class="collapse-item" href="forgot-password.jsp">Forgot Password</a>
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">Other Pages:</h6>
