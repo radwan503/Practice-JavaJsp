@@ -1,0 +1,59 @@
+
+
+/* Portrait tablets and medium desktops */
+
+@media (max-width: 991px) {
+      .bg-content {
+        transform: translateY(180%);
+    }
+}
+
+@media (max-width: 768px) {
+  
+       .bg-content {
+        transform: translateY(180%);
+    }
+}
+
+/* Phone Standard Width */
+
+@media (max-width: 480px) {
+    
+      .bg-content {
+        transform: translateY(180%);
+    }
+    .bg-content h1 {
+        font-size: 1.5rem;
+        color: #fff;
+    }
+    .counter-box{
+        margin-top: 10px;
+    }
+    .portfolio-menu > button{
+        margin-bottom: 10px;
+    }
+    .scrolltop {
+    transform: translateY(-180%);
+    cursor: pointer;
+}
+}
+
+
+/* iPhone 4s and Smaller Screen */
+
+@media (max-width: 360px) {
+    .bg-content {
+        transform: translateY(100%);
+    }
+    .bg-content h1 {
+        font-size: 1.5rem;
+        color: #fff;
+    }
+    .counter-box{
+        margin-top: 10px;
+    }
+    .scrolltop {
+    transform: translateY(-180%);
+    cursor: pointer;
+}
+}
