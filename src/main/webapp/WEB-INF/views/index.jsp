@@ -37,11 +37,16 @@
         </div>
         <div class="about-wrapper text-center">
             <div class="row">
+                <c:forEach items="${aboutContent}" var="aboutList">
+
                 <div class="col-xl-4 col-md-4 col-sm-12">
                     <div class="img-box">
-                        <div class="img-thumb"> <img src="../static/image/about/open-source.png" alt="" class="img-responsive"> </div>
-                        <h3 class="img-title">We Are Open Source</h3> </div>
+                        <div class="img-thumb">
+                            <img src="../static/image/about/open-source.png" alt="" class="img-responsive"> </div>
+                             <h3 class="img-title">${aboutList.imgTitle}</h3> </div>
                 </div>
+
+                </c:forEach>
                 <div class="col-xl-4 col-md-4 col-sm-12">
                     <div class="img-box">
                         <div class="img-thumb"> <img src="../static/image/about/wordpress.png" alt="" class="img-responsive"> </div>
@@ -78,18 +83,23 @@
         <div class="row">
             <div class="section-heading mb-50 text-center">
                 <h2 class="section-title">Service</h2>
-                <p class="section-subtitle">Ours is a team of visionary young professionals who simply love WordPress. We code and we develop to make you happy.</p>
+                <c:forEach items="${serviceContent}" var="service_header">
+                <p class="section-subtitle">${service_header.serviceSectionTitle}</p>
+                </c:forEach>
             </div>
         </div>
         <div class="about-wrapper text-center">
             <div class="row">
+
+                <c:forEach items="${serviceContent}" var="content">
                 <div class="col-xl-4 col-md-4 col-sm-12">
                     <div class="service-box">
                         <div class="product-thumb"> <img src="../static/image/service/open-source.png" alt="" class="img-responsive"> </div>
-                        <h3 class="product-title">We Are Open Source</h3>
-                        <div class="product-content"> Build your dream marketplace with the one-stop Multi Vendor eCommerce solution for WordPress Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+                        <h3 class="product-title">${content.serviceTitle}</h3>
+                        <div class="product-content">${content.serviceDetailsSubTitle} </div>
                     </div>
                 </div>
+                </c:forEach>
                 <div class="col-xl-4 col-md-4 col-sm-12">
                     <div class="service-box">
                         <div class="product-thumb"> <img src="../static/image/service/project-management.png" alt="" class="img-responsive"> </div>
@@ -136,7 +146,9 @@
         <div class="row">
             <div class="section-heading mb-50 text-center">
                 <h2 class="section-title">Portfolio</h2>
-                <p class="section-subtitle">Ours is a team of visionary young professionals who simply love WordPress. We code and we develop to make you happy.</p>
+                <c:forEach items="${portfolioContent}" var="portfolio_header">
+                <p class="section-subtitle">${portfolio_header.portfolioSectionTitle}</p>
+                </c:forEach>
             </div>
         </div>
         <div class="row">
@@ -273,36 +285,24 @@
     <div class="container">
         <div class="row">
             <div class="section-heading mb-50 text-center">
-                <h2 class="section-title">Testmonial</h2>
-                <p class="section-subtitle">Ours is a team of visionary young professionals who simply love WordPress. We code and we develop to make you happy.</p>
+                <h2 class="section-title">Testimonial</h2>
+                <c:forEach items="${testimonialContent}" var="testimonial_header">
+                <p class="section-subtitle">${testimonial_header.testimonialSectionTitle}</p>
+                </c:forEach>
             </div>
         </div>
         <div class="testmonial-wrapper text-center">
             <div class="testmonial-item-group owl-carousel">
-                <!--single testmonial-->
+                <c:forEach items="${testimonialContent}" var="testimonial">
                 <div class="single-item-test">
                     <div class="reviewr-img"> <img src="../static/image/testmonial/testmonial1.png" class="img-responsive" alt=""> </div>
                     <div class="review-comment mt-50">
-                        <h3 class="reviwer-title">“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.” </h3>
-                        <p class="reviwer-subtitle">― Marilyn Monroe</p>
+                        <h3 class="reviwer-title">${testimonial.testimonialDetails}</h3>
+                        <p class="reviwer-subtitle">― ${testimonial.testimonialUserName}</p>
                     </div>
                 </div>
-                <!--single testmonial-->
-                <div class="single-item-test">
-                    <div class="reviewr-img"> <img src="../static/image/testmonial/testmonial2.png" class="img-responsive" alt=""> </div>
-                    <div class="review-comment mt-50">
-                        <h3 class="reviwer-title">“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.” </h3>
-                        <p class="reviwer-subtitle">― Marilyn Monroe</p>
-                    </div>
-                </div>
-                <!--single testmonial-->
-                <div class="single-item-test">
-                    <div class="reviewr-img"> <img src="../static/image/testmonial/testmonial3.png" class="img-responsive" alt=""> </div>
-                    <div class="review-comment mt-50">
-                        <h3 class="reviwer-title">“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.” </h3>
-                        <p class="reviwer-subtitle">― Marilyn Monroe</p>
-                    </div>
-                </div>
+                </c:forEach>
+
             </div>
         </div>
     </div>
@@ -314,7 +314,9 @@
         <div class="row">
             <div class="section-heading mb-50 text-center">
                 <h2 class="section-title">Team</h2>
-                <p class="section-subtitle">Ours is a team of visionary young professionals who simply love WordPress. We code and we develop to make you happy.</p>
+                 <c:forEach items="${teamContent}" var="team_header">
+                <p class="section-subtitle">${team_header.teamSectionTitle}</p>
+                </c:forEach>
             </div>
         </div>
         <div class="team-wrapper">
@@ -334,10 +336,13 @@
         <div class="row">
             <div class="section-heading mb-50 text-center">
                 <h2 class="section-title">Pricing</h2>
-                <p class="section-subtitle">Ours is a team of visionary young professionals who simply love WordPress. We code and we develop to make you happy.</p>
+                <c:forEach items="${pricingContent}" var="pricing_header">
+                <p class="section-subtitle">${pricing_header.pricingSectionTitle}</p>
+                </c:forEach>
             </div>
         </div>
         <div class="row">
+            <c:forEach items="${pricingContent}" var="pricing">
             <div class="col-xl-4 col-md-4 col-sm-12">
                 <div class="pricingTable">
                     <svg x="0" y="0" viewBox="0 0 360 220">
@@ -347,66 +352,21 @@
                                 s27.202-37.185,46.917-8.488c19.715,28.693,38.687,13.116,46.502,4.832c7.817-8.282,27.386-15.906,41.405,6.294V0H0.48
                                 L0.732,193.75z"></path>
                         </g>
-                        <text transform="matrix(1 0 0 1 109.7256 116.2686)" fill="#fff" font-size="48.4489">$10</text>
+                        <text transform="matrix(1 0 0 1 109.7256 116.2686)" fill="#fff" font-size="48.4489">${pricing.price}</text>
                         <text transform="matrix(0.9566 0 0 1 197.3096 83.9121)" fill="#fff" font-size="19.0829">.99</text>
                         <text transform="matrix(1 0 0 1 233.9629 115.5303)" fill="#fff" font-size="15.4128">/Month</text>
                     </svg>
                     <div class="pricing-content">
-                        <h3 class="title">Standard</h3>
+                        <h3 class="title">${pricing.subscriptionType}</h3>
                         <ul class="pricing-content">
-                            <li><b>50GB</b> Disk Space</li>
-                            <li><b>50GB</b> Bandwidth</li>
-                            <li><b>10</b> Subdomains</li>
-                            <li><b>15</b> Domains</li>
+                            <li>${pricing.subscriptionDetailsOne}</li>
+                            <li>${pricing.subscriptionDetailsTwo}</li>
+                            <li>${pricing.subscriptionDetailsThree}</li>
+                            <li><${pricing.subscriptionDetailsFour}</li>
                         </ul> <a href="#" class="pricingTable-signup">Subscribe Now</a> </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-md-4 col-sm-12">
-                <div class="pricingTable blue">
-                    <svg x="0" y="0" viewBox="0 0 360 220">
-                        <g>
-                            <path fill="#2BC084" d="M0.732,193.75c0,0,29.706,28.572,43.736-4.512c12.976-30.599,37.005-27.589,44.983-7.061
-                                c8.09,20.815,22.83,41.034,48.324,27.781c21.875-11.372,46.499,4.066,49.155,5.591c6.242,3.586,28.729,7.626,38.246-14.243
-                                s27.202-37.185,46.917-8.488c19.715,28.693,38.687,13.116,46.502,4.832c7.817-8.282,27.386-15.906,41.405,6.294V0H0.48
-                                L0.732,193.75z"></path>
-                        </g>
-                        <text transform="matrix(1 0 0 1 109.7256 116.2686)" fill="#fff" font-size="48.4489">$20</text>
-                        <text transform="matrix(0.9566 0 0 1 197.3096 83.9121)" fill="#fff" font-size="19.0829">.99</text>
-                        <text transform="matrix(1 0 0 1 233.9629 115.5303)" fill="#fff" font-size="15.4128">/Month</text>
-                    </svg>
-                    <div class="pricing-content">
-                        <h3 class="title">Business</h3>
-                        <ul class="pricing-content">
-                            <li><b>60GB</b> Disk Space</li>
-                            <li><b>60GB</b> Bandwidth</li>
-                            <li><b>15</b> Subdomains</li>
-                            <li><b>20</b> Domains</li>
-                        </ul> <a href="#" class="pricingTable-signup">Subscribe Now</a> </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-4 col-sm-12">
-                <div class="pricingTable">
-                    <svg x="0" y="0" viewBox="0 0 360 220">
-                        <g>
-                            <path fill="#28B463" d="M0.732,193.75c0,0,29.706,28.572,43.736-4.512c12.976-30.599,37.005-27.589,44.983-7.061
-                                c8.09,20.815,22.83,41.034,48.324,27.781c21.875-11.372,46.499,4.066,49.155,5.591c6.242,3.586,28.729,7.626,38.246-14.243
-                                s27.202-37.185,46.917-8.488c19.715,28.693,38.687,13.116,46.502,4.832c7.817-8.282,27.386-15.906,41.405,6.294V0H0.48
-                                L0.732,193.75z"></path>
-                        </g>
-                        <text transform="matrix(1 0 0 1 109.7256 116.2686)" fill="#fff" font-size="48.4489">$10</text>
-                        <text transform="matrix(0.9566 0 0 1 197.3096 83.9121)" fill="#fff" font-size="19.0829">.99</text>
-                        <text transform="matrix(1 0 0 1 233.9629 115.5303)" fill="#fff" font-size="15.4128">/Month</text>
-                    </svg>
-                    <div class="pricing-content">
-                        <h3 class="title">Professional</h3>
-                        <ul class="pricing-content">
-                            <li><b>50GB</b> Disk Space</li>
-                            <li><b>50GB</b> Bandwidth</li>
-                            <li><b>10</b> Subdomains</li>
-                            <li><b>15</b> Domains</li>
-                        </ul> <a href="#" class="pricingTable-signup">Subscribe Now</a> </div>
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 </section>
@@ -417,43 +377,25 @@
         <div class="row">
             <div class="section-heading mb-50 text-center">
                 <h2 class="section-title">Count Your Process</h2>
-                <p class="section-subtitle">Ours is a team of visionary young professionals who simply love WordPress. We code and we develop to make you happy.</p>
+                <c:forEach items="${counterContent}" var="conter_header">
+                <p class="section-subtitle">${conter_header.counterSectionTitle}</p>
+                </c:forEach>
             </div>
         </div>
         <div class="counter-wrapper text-center">
             <div class="row">
+                <c:forEach items="${counterContent}" var="counter">
                 <div class="col-xl-3 col-md-3 col-sm-3">
                     <!--Counter box -->
                     <div class="counter-box">
                         <div class="counter-icon">
                             <img src="../static/image/icon/smile.png" alt=""></div>
-                        <span class="counter-num">128</span>
-                        <p class="counter-name mt-10">happy client</p>
+                        <span class="counter-num">${counter.counterNumber}</span>
+                        <p class="counter-name mt-10">${counter.counterDetails}</p>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-3 col-sm-3">
-                    <div class="counter-box">
-                        <div class="counter-icon">
-                            <img src="../static/image/icon/project-management.png" alt=""></div> <span class="counter-num">150</span>
-                        <p class="counter-name mt-10">Total Project </p>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-3 col-sm-3">
-                    <div class="counter-box">
-                        <div class="counter-icon">
-                            <img src="../static/image/icon/coffee-cup.png" alt=""></div>
-                        <span class="counter-num">10208</span>
-                        <p class="counter-name mt-10">Cup of Cofee</p>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-3 col-sm-3">
-                    <div class="counter-box wow slideInRight">
-                        <div class="counter-icon">
-                            <img src="../static/image/icon/web.png" alt=""></div>
-                        <span class="counter-num">10000</span>
-                        <p class="counter-name mt-10">line of Code</p>
-                    </div>
-                </div>
+                </c:forEach>
+
             </div>
         </div>
     </div>
@@ -465,50 +407,29 @@
         <div class="row">
             <div class="section-heading mb-50 text-center">
                 <h2 class="section-title">Blog</h2>
-                <p class="section-subtitle">Ours is a team of visionary young professionals who simply love WordPress. We code and we develop to make you happy.</p>
+                <c:forEach items="${blogContent}" var="blog_header">
+                <p class="section-subtitle">${blog_header.blogSectionTitle}</p>
+                </c:forEach>
             </div>
         </div>
         <div class="blog-wrapper">
             <div class="card-deck blog-post-active owl-carousel">
                 <!--single card-->
+                <c:forEach items="${blogContent}" var="blog">
                 <div class="card single-blog-post "> <img class="card-img-top" src="../static/image/blog/blog1.png" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Here Write Your Post Title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat nemo, esse quas a, expedita maxime veniam eveniet natus! Exercitationem, suscipit.</p>
+                        <h5 class="card-title">${blog.blogPostTitle}</h5>
+                        <p class="card-text">${blog.blogPostDetails}</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted" title="Admin">
-                            <i class="fa fa-user-plus" aria-hidden="true"></i> 3 mins ago</small>
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>${blog.blogPostTime}</small>
                         <a href="#" class="btn-read butn-bg pull-right">
                             <span>See More</span></a> </div>
                 </div>
+                </c:forEach>
                 <!--single card-->
-                <div class="card single-blog-post"> <img class="card-img-top" src="../static/image/blog/blog2.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Here Write Your Post Title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat nemo, esse quas a, expedita maxime veniam eveniet natus! Exercitationem, suscipit.</p>
-                    </div>
-                    <div class="card-footer"> <small class="text-muted" title="Lorm"><i class="fa fa-user-plus" aria-hidden="true"></i> 1 hour ago</small> <a href="#" class="btn-read butn-bg pull-right">
-                        <span>See More</span></a> </div>
-                </div>
-                <!--single card-->
-                <div class="card single-blog-post"> <img class="card-img-top" src="../static/image/blog/blog3.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Here Write Your Post Title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat nemo, esse quas a, expedita maxime veniam eveniet natus! Exercitationem, suscipit.</p>
-                    </div>
-                    <div class="card-footer"> <small class="text-muted pull-left" title="Admin"><i class="fa fa-user-plus" aria-hidden="true"></i> 5 mins ago</small> <a href="#" class="btn-read butn-bg pull-right">
-                        <span>See More</span></a> </div>
-                </div>
-                <!--single card-->
-                <div class="card single-blog-post"> <img class="card-img-top" src="../static/image/blog/blog3.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Here Write Your Post Title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat nemo, esse quas a, expedita maxime veniam eveniet natus! Exercitationem, suscipit.</p>
-                    </div>
-                    <div class="card-footer"> <small class="text-muted pull-left" title="Admin"><i class="fa fa-user-plus" aria-hidden="true"></i> 5 mins ago</small> <a href="#" class="btn-read butn-bg pull-right">
-                        <span>See More</span></a> </div>
-                </div>
+
 
             </div>
         </div>
@@ -521,7 +442,9 @@
         <div class="row">
             <div class="section-heading mb-50 text-center">
                 <h2 class="section-title">Contact</h2>
-                <p class="section-subtitle">Ours is a team of visionary young professionals who simply love WordPress. We code and we develop to make you happy.</p>
+                <c:forEach items="${contactContent}" var="contact_header">
+                <p class="section-subtitle">${contact_header.contactSectionTitle}</p>
+                </c:forEach>
             </div>
         </div>
         <div class="contact-wrapper">
@@ -562,13 +485,15 @@
                 <div class="col-xl-6 col-md-6 col-sm-6">
                     <!--Right col-->
                     <div class="contact-info mt-40">
+                        <c:forEach items="${contactContent}" var="contact">
                         <h2 class="contact-section-title">Get in Touch</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta aspernatur ex tenetur doloremque voluptatum. Illum saepe minus nostrum architecto debitis.</p>
+                        <p>${contact.aboutCompany}</p>
                         <div class="contact-content">
-                            <div class="c-list"> <span class="pull-left icon mr-15"><i class="fa fa-envelope-o" aria-hidden="true"></i></span> <span class="info">rdawncse503@gmail.com</span> </div>
-                            <div class="c-list mt-30"> <span class="pull-left icon mr-15"><i class="fa fa-phone" aria-hidden="true"></i></span> <span class="info">+0088 17938-1922</span> </div>
-                            <div class="c-list mt-30"> <span class="pull-left icon mr-15"><i class="fa fa-map" aria-hidden="true"></i></span> <span class="info">Savar,Dhaka,Bangladesh,1201</span> </div>
+                            <div class="c-list"> <span class="pull-left icon mr-15"><i class="fa fa-envelope-o" aria-hidden="true"></i></span> <span class="info">${contact.companyEmail}</span> </div>
+                            <div class="c-list mt-30"> <span class="pull-left icon mr-15"><i class="fa fa-phone" aria-hidden="true"></i></span> <span class="info">${contact.contactNumber}</span> </div>
+                            <div class="c-list mt-30"> <span class="pull-left icon mr-15"><i class="fa fa-map" aria-hidden="true"></i></span> <span class="info">${contact.contactLocation}</span> </div>
                         </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>

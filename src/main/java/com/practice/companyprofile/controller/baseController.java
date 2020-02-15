@@ -1,9 +1,7 @@
 package com.practice.companyprofile.controller;
 
-import com.practice.companyprofile.dao.MessageDAO;
-import com.practice.companyprofile.dao.SliderDAO;
-import com.practice.companyprofile.model.MessageUser;
-import com.practice.companyprofile.model.SliderDomain;
+import com.practice.companyprofile.dao.*;
+import com.practice.companyprofile.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -32,11 +30,92 @@ public class baseController {
     @Autowired
     private SliderDAO sliderDAO;
 
+
+    @Autowired
+    private AboutDAO aboutDAO;
+
+    @Autowired
+    private ServiceDAO serviceDAO;
+
+    @Autowired
+    private PortfolioDAO portfolioDAO;
+
+    @Autowired
+    private TestimonialDAO testimonialDAO;
+
+    @Autowired
+    private TeamDAO teamDAO;
+
+    @Autowired
+    private PricingDAO pricingDAO;
+
+    @Autowired
+    private CounterDAO counterDAO;
+
+    @Autowired
+    private BlogDAO blogDAO;
+
+    @Autowired
+    private ContactDAO contactDAO;
+
     @RequestMapping(value = "/home",method = RequestMethod.GET)
     public ModelAndView homePage(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("index");
         List<SliderDomain> sliderContent = sliderDAO.getSlider();
         mv.addObject("sliderContent",sliderContent);
+
+        //about
+
+        List<AboutDomain> aboutContent = aboutDAO.getAbout();
+        mv.addObject("aboutContent",aboutContent);
+
+
+        //service
+
+        List<ServiceDomain> serviceContent =  serviceDAO.getService();
+        mv.addObject("serviceContent",serviceContent);
+
+        //portfolio
+
+        List<PortfolioDomain> portfolioContent =  portfolioDAO.getPortfolio();
+        mv.addObject("portfolioContent",portfolioContent);
+
+        //Testimonial
+
+
+        List<TestimonialDomain> testimonialContent = testimonialDAO.getTestimonial();
+        mv.addObject("testimonialContent",testimonialContent);
+
+        //Team
+
+        List<TeamDomain> teamContent = teamDAO.getTeam();
+        mv.addObject("teamContent",teamContent);
+
+
+        //pricing
+
+        List<PricingDomain> pricingContent =pricingDAO.getPricing();
+        mv.addObject("pricingContent",pricingContent);
+
+        //Counter
+
+        List<CounterDomain> counterContent =counterDAO.getCounter();
+        mv.addObject("counterContent",counterContent);
+
+
+        //Blog
+
+        List<BlogDomain> blogContent = blogDAO.getCounter();
+        mv.addObject("blogContent",blogContent);
+
+        //Contact
+
+        List<ContactDomain> contactContent = contactDAO.getContact();
+        mv.addObject("contactContent",contactContent);
+
+
+
+
         return mv;
 
     }

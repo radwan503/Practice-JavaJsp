@@ -92,12 +92,12 @@
                 <div class="card shadow">
                 <div class="signup-form about-form">
                   <form action="${pageContext.request.contextPath}/addAboutContent" method="POST">
-                    <h6 class="m-0 font-weight-bold text-primary card-header py-3">About</h6>
+                    <h6 class="m-0 font-weight-bold text-primary card-header py-3">About ${message}</h6>
                     <div class="card-body">
                     <div class="form-group row">
                       <label for="aSubTitle" class="col-sm-2 col-form-label">Sub Title</label>
                       <div class="col-sm-6">
-                      <input type="text" class="form-control" name="subTitle" placeholder="SubTitle" id="aSubTitle" required="required">
+                      <input type="text" class="form-control" name="subTitle" placeholder="SubTitle" id="aSubTitle">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -125,13 +125,13 @@
                         <div class="form-group row">
                           <label for="serviceSectionTitle" class="col-sm-2 col-form-label">Section SubTitle</label>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control" name="serviceSectionTitle" placeholder="Section SubTitle" id="serviceSectionTitle" required="required">
+                            <input type="text" class="form-control" name="serviceSectionTitle" placeholder="Section SubTitle" id="serviceSectionTitle">
                           </div>
                         </div>
                         <div class="form-group row">
                           <label for="serviceTitle" class="col-sm-2 col-form-label">Title</label>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control" name="serviceDetailsTitle" placeholder="Service Title" id="serviceTitle" required="required">
+                            <input type="text" class="form-control" name="serviceTitle" placeholder="Service Title" id="serviceTitle" required="required">
                           </div>
                         </div>
                         <div class="form-group row">
@@ -155,8 +155,11 @@
               <div class="tab-pane fade" id="portfolio" role="tabpanel" aria-labelledby="portfolio-tab">
                 <div class="card shadow">
                   <div class="signup-form about-form">
-                    <form action="${pageContext.request.contextPath}/addServiceContent" method="POST">
-                      <h6 class="m-0 font-weight-bold text-primary card-header py-3">Portfolio</h6>
+                    <form action="${pageContext.request.contextPath}/addPortfolioContent" method="POST">
+                      <c:forEach items="${portfolioContent}" var="portfolio_header">
+                        <h6 class="m-0 font-weight-bold text-primary card-header py-3">${portfolio_header.portfolioSectionTitle}</h6>
+                      </c:forEach>
+
                       <div class="card-body">
                         <div class="form-group row">
                           <label for="portfolioSectionTitle" class="col-sm-2 col-form-label">Section SubTitle</label>
@@ -191,25 +194,25 @@
               <div class="tab-pane fade" id="testmonial" role="tabpanel" aria-labelledby="testmonial-tab">
                 <div class="card shadow">
                   <div class="signup-form about-form">
-                    <form action="${pageContext.request.contextPath}/addServiceContent" method="POST">
-                      <h6 class="m-0 font-weight-bold text-primary card-header py-3">Testmonial</h6>
+                    <form action="${pageContext.request.contextPath}/addTestimonialContent" method="POST">
+                      <h6 class="m-0 font-weight-bold text-primary card-header py-3">Testimonial</h6>
                       <div class="card-body">
                         <div class="form-group row">
-                          <label for="testmonialSectionTitle" class="col-sm-2 col-form-label">Section SubTitle</label>
+                          <label for="testimonialSectionTitle" class="col-sm-2 col-form-label">Section SubTitle</label>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control" name="testmonialSectionTitle" placeholder="Section SubTitle" id="testmonialSectionTitle" required="required">
+                            <input type="text" class="form-control" name="testimonialSectionTitle" placeholder="Section SubTitle" id="testimonialSectionTitle">
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label for="testmonialDeatils" class="col-sm-2 col-form-label">Details</label>
+                          <label for="testimonialDetails" class="col-sm-2 col-form-label">Details</label>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control" name="testmonialDeatils" placeholder="User Comment" id="testmonialDeatils" required="required">
+                            <input type="text" class="form-control" name="testimonialDetails" placeholder="User Comment" id="testimonialDetails" required="required">
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label for="testmonialUserName" class="col-sm-2 col-form-label">User Name</label>
+                          <label for="testimonialUserName" class="col-sm-2 col-form-label">User Name</label>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control" name="testmonialUserName" placeholder="User Name" id="testmonialUserName" required="required">
+                            <input type="text" class="form-control" name="testimonialUserName" placeholder="User Name" id="testimonialUserName" required="required">
                           </div>
                         </div>
                         <div class="form-group row">
@@ -227,7 +230,7 @@
               <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">
                 <div class="card shadow">
                   <div class="signup-form about-form">
-                    <form action="${pageContext.request.contextPath}/addServiceContent" method="POST">
+                    <form action="${pageContext.request.contextPath}/addTeamContent" method="POST">
                       <h6 class="m-0 font-weight-bold text-primary card-header py-3">Team</h6>
                       <div class="card-body">
                         <div class="form-group row">
@@ -251,13 +254,13 @@
               <div class="tab-pane fade" id="pricing" role="tabpanel" aria-labelledby="pricing-tab">
                 <div class="card shadow">
                   <div class="signup-form about-form">
-                    <form action="${pageContext.request.contextPath}/addServiceContent" method="POST">
+                    <form action="${pageContext.request.contextPath}/addPricingContent" method="POST">
                       <h6 class="m-0 font-weight-bold text-primary card-header py-3">Pricing</h6>
                       <div class="card-body">
                         <div class="form-group row">
                         <label for="pricingSectionTitle" class="col-sm-2 col-form-label">Section SubTitle</label>
                         <div class="col-sm-6">
-                          <input type="text" class="form-control" name="pricingSectionTitle" placeholder="Section SubTitle" id="pricingSectionTitle" required="required">
+                          <input type="text" class="form-control" name="pricingSectionTitle" placeholder="Section SubTitle" id="pricingSectionTitle">
                         </div>
                       </div>
                         <div class="form-group row">
@@ -311,13 +314,13 @@
               <div class="tab-pane fade" id="counter" role="tabpanel" aria-labelledby="counter-tab">
                 <div class="card shadow">
                   <div class="signup-form about-form">
-                    <form action="${pageContext.request.contextPath}/addServiceContent" method="POST">
+                    <form action="${pageContext.request.contextPath}/addCounterContent" method="POST">
                       <h6 class="m-0 font-weight-bold text-primary card-header py-3">Counter</h6>
                       <div class="card-body">
                         <div class="form-group row">
                           <label for="counterSectionTitle" class="col-sm-2 col-form-label">Section SubTitle</label>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control" name="counterSectionTitle" placeholder="Section SubTitle" id="counterSectionTitle" required="required">
+                            <input type="text" class="form-control" name="counterSectionTitle" placeholder="Section SubTitle" id="counterSectionTitle">
                           </div>
                         </div>
                         <div class="form-group row">
@@ -346,7 +349,7 @@
               <div class="tab-pane fade" id="blog" role="tabpanel" aria-labelledby="blog-tab">
                 <div class="card shadow">
                   <div class="signup-form about-form">
-                    <form action="${pageContext.request.contextPath}/addServiceContent" method="POST">
+                    <form action="${pageContext.request.contextPath}/addBlogContent" method="POST">
                       <h6 class="m-0 font-weight-bold text-primary card-header py-3">Blog</h6>
                       <div class="card-body">
                         <div class="form-group row">
@@ -390,7 +393,7 @@
               <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                 <div class="card shadow">
                   <div class="signup-form about-form">
-                    <form action="${pageContext.request.contextPath}/addServiceContent" method="POST">
+                    <form action="${pageContext.request.contextPath}/addContactContent" method="POST">
                       <h6 class="m-0 font-weight-bold text-primary card-header py-3">Contact</h6>
                       <div class="card-body">
                         <div class="form-group row">
@@ -476,3 +479,4 @@
 
 
 <c:import url="dashbord-footer.jsp"></c:import>
+

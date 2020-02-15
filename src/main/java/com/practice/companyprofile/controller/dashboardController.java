@@ -30,6 +30,5 @@ public class dashboardController {
     public ModelAndView dashBoardRegisterPage(){
         ModelAndView mv = new ModelAndView("dashboard/register");
         return  mv;
-
     }
 }
