@@ -355,7 +355,7 @@
                         <div class="form-group row">
                           <label for="blogSectionTitle" class="col-sm-2 col-form-label">Section SubTitle</label>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control" name="blogSectionTitle" placeholder="Section SubTitle" id="blogSectionTitle" required="required">
+                            <input type="text" class="form-control" name="blogSectionTitle" placeholder="Section SubTitle" id="blogSectionTitle">
                           </div>
                         </div>
                         <div class="form-group row">
@@ -399,7 +399,7 @@
                         <div class="form-group row">
                           <label for="contactSectionTitle" class="col-sm-2 col-form-label">Section SubTitle</label>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control" name="contactSectionTitle" placeholder="Section SubTitle" id="contactSectionTitle" required="required">
+                            <input type="text" class="form-control" name="contactSectionTitle" placeholder="Section SubTitle" id="contactSectionTitle">
                           </div>
                         </div>
                         <div class="form-group row">
@@ -444,13 +444,8 @@
           </div>
           <!-- /.col-md-8 -->
         </div>
-
-
-
-
       </div>
       <!-- /.container-fluid -->
-
     </div>
     <!-- End of Main Content -->
 
